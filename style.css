@@ -1,0 +1,268 @@
+body {
+    background-color: rgb(29, 30, 30);
+    height: 100vh;
+    font-family: "Playfair Display", system-ui;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+}
+
+header {
+    background-color: rgb(29, 30, 30);
+    border-bottom: 1px solid white;
+}
+
+.home {
+    height: 100vh;
+    /* width: 99vw; */
+}
+
+
+.nav-bar-links li a:hover {
+    color: aqua !important;
+}
+
+.nav-bar-links li a.active {
+    color: aqua !important;
+}
+
+.img-col img {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+span {
+    color: aqua;
+}
+
+.socail-media a {
+    margin-left: 20px;
+    font-size: 30px;
+    color: aqua;
+    background-color: transparent;
+    transition: .3s;
+}
+
+.socail-media a:hover {
+    color: white;
+}
+
+.about {
+    background-color: rgb(33, 33, 33);
+    height: 100vh;
+    /* width: 99vw; */
+}
+
+.about-btn {
+    border: none;
+    background-color: rgb(0, 219, 219);
+    color: black;
+    border: 1px solid aqua;
+    border-radius: 20px;
+    padding: 5px;
+    transition: .3s;
+    box-shadow: 0 0 10px aqua;
+}
+
+.about-btn:hover {
+    /* background-color: white; */
+    color: black;
+    border: 1px solid aqua;
+    box-shadow: none;
+}
+
+.services {
+    height: 100vh;
+    /* width: 99vw; */
+}
+
+.services-col {
+    border: 1px solid white;
+    border-radius: 20px;
+    transition: .5s ease;
+}
+
+.services-col:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 20px white;
+}
+
+.services-btn {
+    border: 1px solid aqua;
+    background-color: aqua;
+    border-radius: 10px;
+    box-shadow: 0 0 10px aqua;
+    transition: .3s;
+}
+
+.services-btn:hover {
+    box-shadow: none;
+}
+
+.Portfolio {
+    height: 100vh;
+    /* width: 99vw; */
+    background-color: rgb(33, 33, 33);
+}
+
+.Portfolio-col {
+    height: 15rem;
+}
+
+.Portfolio-col img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    border: 1px solid white;
+    border-radius: 20px;
+    transition: .3s;
+}
+
+.Portfolio-col img:hover {
+    box-shadow: 0 0 20px white;
+}
+
+.contact {
+    /* width: 99vw; */
+    height: 100vh;
+}
+
+.contact-col input {
+    width: 100%;
+}
+
+textarea {
+    resize: none;
+    width: 100%;
+}
+
+.contact-me-btn {
+    background-color: aqua;
+    border: none;
+    border-radius: 20px;
+    padding: 10px;
+    width: 100%;
+    box-shadow: 0 0 10px aqua;
+    transition: .5s;
+}
+
+.contact-me-btn:hover {
+    box-shadow: none;
+}
+
+
+@media screen and (max-width: 768px) {
+
+    /* .home-row{
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+    } */
+    .home img {
+        width: 100%;
+        height: 75%;
+    }
+
+    .home h3 {
+        font-size: 19px;
+    }
+
+    .home-col {
+        margin-top: 0;
+        margin-bottom: 0;
+    }
+
+    .about .img-col img {
+        width: 100%;
+        height: 79%;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .services {
+        height: auto;
+    }
+
+    .services h1 {
+        margin-bottom: 2rem !important;
+        margin-top: 1rem !important;
+    }
+
+    .services-col {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        width: auto;
+        margin-left: 0;
+    }
+
+    .Portfolio-col {
+        height: 10rem;
+        width: 10rem;
+        padding-right: 0;
+        padding-left: 0;
+        margin-right: 20px;
+    }
+
+    .contact textarea {
+        width: 100%;
+
+    }
+
+    .contact .textarea {
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+    .contact-col {
+        margin-bottom: 1rem;
+        padding-left: 0;
+        padding-right: 0;
+    }
+
+}
+
+@media screen and (max-width:425px) {
+    .home-row {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .home-row .img-col img {
+        width: 50%;
+    }
+
+    .home h3 {
+        font-size: 20px;
+    }
+
+    .about .img-col img {
+        width: 50%;
+        height: 100%;
+    }
+
+    .services {
+        padding: 20px;
+    }
+
+    .Portfolio {
+        padding: 30px;
+        height: auto;
+    }
+
+    .Portfolio-col {
+        height: 12rem;
+        width: 20rem;
+        margin-top: 20px;
+    }
+
+    .contact{
+       height: auto;
+        padding: 20px;
+    }
+
+    .contact-col{
+        width: 100%;
+    }
+}
