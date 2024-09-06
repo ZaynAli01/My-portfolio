@@ -112,6 +112,7 @@ span i {
     border: 1px solid white;
     border-radius: 20px;
     transition: .5s ease;
+    padding: 15px 5px;
 }
 
 .services-col:hover {
@@ -233,7 +234,7 @@ textarea {
 
     .services-col {
         margin-bottom: 30px;
-        padding: 15px 5px;
+        /* padding: 15px 5px; */
         width: auto;
         margin-left: 0;
     }
