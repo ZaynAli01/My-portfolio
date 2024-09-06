@@ -12,6 +12,27 @@ header {
     border-bottom: 1px solid white;
 }
 
+/* typing animation */
+
+#typing-text {
+    font-size: 30px;
+    color: aqua;
+    white-space: nowrap;
+    overflow: hidden;
+    border-right: 3px solid;
+    width: 0;
+    animation: blinkCursor 0.7s steps(2, start) infinite;
+}
+
+@keyframes blinkCursor {
+    50% {
+        border-color: transparent;
+    }
+}
+
+
+
+
 .home {
     height: 100vh;
     /* width: 99vw; */
@@ -31,10 +52,15 @@ header {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
+    box-shadow: 0 0 40px aqua;
 }
 
 span {
     color: aqua;
+}
+
+span i {
+    font-size: 25px;
 }
 
 .socail-media a {
@@ -76,6 +102,10 @@ span {
 .services {
     height: 100vh;
     /* width: 99vw; */
+}
+
+.services .web-dev {
+    font-size: 26px;
 }
 
 .services-col {
@@ -152,14 +182,20 @@ textarea {
     box-shadow: none;
 }
 
+.icons {
+    display: none;
+}
+
+#check {
+    display: none;
+}
+
+
+
 
 @media screen and (max-width: 768px) {
 
-    /* .home-row{
-        display: flex;
-        flex-direction: column-reverse;
-        align-items: center;
-    } */
+
     .home img {
         width: 100%;
         height: 75%;
@@ -172,6 +208,7 @@ textarea {
     .home-col {
         margin-top: 0;
         margin-bottom: 0;
+        padding-left: 25px;
     }
 
     .about .img-col img {
@@ -179,6 +216,10 @@ textarea {
         height: 79%;
         padding-left: 0;
         padding-right: 0;
+    }
+
+    .about-col {
+        padding-left: 20px;
     }
 
     .services {
@@ -191,8 +232,8 @@ textarea {
     }
 
     .services-col {
-        margin-bottom: 20px;
-        padding-bottom: 10px;
+        margin-bottom: 30px;
+        padding: 15px 5px;
         width: auto;
         margin-left: 0;
     }
@@ -203,6 +244,7 @@ textarea {
         padding-right: 0;
         padding-left: 0;
         margin-right: 20px;
+        margin-bottom: 15px;
     }
 
     .contact textarea {
@@ -224,13 +266,84 @@ textarea {
 }
 
 @media screen and (max-width:425px) {
+
+    .icons {
+        display: block;
+    }
+
+    .icons .menu-bar {
+        position: absolute;
+        right: 10%;
+        top: 20%;
+        font-size: 24px;
+    }
+
+    .icons .close-menu-bar-btn {
+        position: absolute;
+        right: 10%;
+        top: 20%;
+        font-size: 24px;
+    }
+
+    #check:checked~.icons .menu-bar {
+        display: none;
+    }
+
+    .icons .close-menu-bar-btn {
+        display: none;
+    }
+
+    #check:checked~.icons .close-menu-bar-btn {
+        display: block;
+    }
+
+
+    .nav-bar {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        height: 0px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(20px);
+        box-shadow: 0 0 10px black;
+        overflow: hidden;
+        width: 100%;
+        transition: .5s ease;
+    }
+
+    #check:checked~.nav-bar {
+        position: absolute;
+        height: 180px;
+    }
+
+    .nav-bar-links {
+        width: 100%;
+
+    }
+
+    .nav-bar-links li {
+        margin-bottom: 10px;
+        text-align: end;
+        font-size: 18px;
+        font-weight: 700;
+        transform: translateY(-100px);
+        transition: .5s ease;
+        opacity: 0;
+    }
+
+    #check:checked~.nav-bar .nav-bar-links li {
+        transition-delay: calc(.1s * var(--i));
+        transform: translateY(0px);
+        opacity: 1;
+    }
+
     .home-row {
         display: flex;
         flex-direction: column-reverse;
     }
 
     .home-row .img-col img {
-        width: 50%;
+        width: 60%;
     }
 
     .home h3 {
@@ -238,12 +351,16 @@ textarea {
     }
 
     .about .img-col img {
-        width: 50%;
+        width: 60%;
         height: 100%;
     }
 
     .services {
         padding: 20px;
+    }
+
+    .services-col:hover {
+        transform: none;
     }
 
     .Portfolio {
@@ -257,12 +374,13 @@ textarea {
         margin-top: 20px;
     }
 
-    .contact{
-       height: auto;
+    .contact {
+        height: auto;
         padding: 20px;
     }
 
-    .contact-col{
+    .contact-col {
         width: 100%;
     }
+
 }
