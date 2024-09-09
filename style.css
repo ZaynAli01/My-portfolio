@@ -8,8 +8,10 @@ body {
 }
 
 header {
+    position: relative;
     background-color: rgb(29, 30, 30);
     border-bottom: 1px solid white;
+    z-index: 2;
 }
 
 /* typing animation */
@@ -48,7 +50,7 @@ header {
 }
 
 .img-col img {
-    width: 100%;
+    width: 80%;
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
@@ -113,6 +115,7 @@ span i {
     border-radius: 20px;
     transition: .5s ease;
     padding: 15px 5px;
+    cursor: pointer;
 }
 
 .services-col:hover {
@@ -133,25 +136,61 @@ span i {
 }
 
 .Portfolio {
+    position: relative;
     height: 100vh;
     /* width: 99vw; */
     background-color: rgb(33, 33, 33);
+    z-index: 1;
 }
 
 .Portfolio-col {
+    position: relative;
     height: 15rem;
+    border: 2px solid white;
+    border-radius: 20px;
+    overflow: hidden;
+}
+
+.Portfolio-col .portfolio-layer {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    bottom: 0;
+    top: 100%;
+    left: 0;   
+    border-radius: 20px;
+    background: linear-gradient(360deg, rgba(0, 201, 228, 3.1) 26%, rgba(0, 0, 0, .6) 90%);
+    transition: .3s ease;
+}
+
+.Portfolio-col:hover .portfolio-layer{
+    top: 0;
+}
+
+.Portfolio-col .portfolio-layer a{
+    display: inline-flex;
+    background: white;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    color: black !important;
+    justify-content: center;
+    align-items: center;
 }
 
 .Portfolio-col img {
+    position: absolute;
     object-fit: cover;
     width: 100%;
     height: 100%;
-    border: 1px solid white;
-    border-radius: 20px;
-    transition: .3s;
+    transition: .4s;
 }
 
 .Portfolio-col img:hover {
+    transform: scale(1.1);
+}
+
+.Portfolio-col:hover {
     box-shadow: 0 0 20px white;
 }
 
@@ -394,10 +433,9 @@ textarea {
 
 }
 
-@media screen and (max-width:375px){
+@media screen and (max-width:375px) {
 
     #typing-text {
         font-size: 18px;
     }
 }
-
